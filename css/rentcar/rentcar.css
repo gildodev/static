@@ -1,0 +1,1532 @@
+/**==============================Table Of Contents Start===========================**/
+/**
+1) Fonts Import & Font Family
+2) Reused Color Definition
+3) General Reused Selectors
+4) Scan Card Container / All Credit Cards Container
+5) Upload Pictures Styles
+6) Car and Card Information Container Styles
+7) Payment Options Container
+8) Addresses Container
+9) Sign Up Container
+10) Settings Wrapper
+11) Support Container
+12) History Items Container
+13) Toggle Yes/No Check/Uncheck Settings
+14) Start Requesting Ride Container
+15) Tapped Car Container
+16) Request Ride Container
+17) Review Container
+18) Promo Container
+19) Chat Container
+20) Google Maps
+21) Buttons
+22) Display
+23) Colors
+24) Margin/Padding
+25) Container
+26) Links
+27) General
+28) Border
+29) Font Sizes
+30) Width/Height
+31) CSS Animations
+32) Responsive Styles
+**/
+/**==============================Table Of Contents End===========================**/
+/**==============================Fonts Start=====================================**/
+@font-face {
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Roboto Condensed Light'), local('RobotoCondensed-Light'), url(https://fonts.gstatic.com/s/robotocondensed/v18/ieVi2ZhZI2eCN5jzbjEETS9weq8-33mZGCQYag.ttf) format('truetype');
+}
+@font-face {
+font-family: 'Roboto Condensed';
+font-style: normal;
+font-weight: 400;
+src: local('Roboto Condensed'), local('RobotoCondensed-Regular'), url(https://fonts.gstatic.com/s/robotocondensed/v18/ieVl2ZhZI2eCN5jzbjEETS9weq8-19K7CA.ttf) format('truetype');
+}
+@font-face {
+font-family: 'Roboto Condensed';
+font-style: normal;
+font-weight: 700;
+src: local('Roboto Condensed Bold'), local('RobotoCondensed-Bold'), url(https://fonts.gstatic.com/s/robotocondensed/v18/ieVi2ZhZI2eCN5jzbjEETS9weq8-32meGCQYag.ttf) format('truetype');
+}
+@font-face {
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 300;
+src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmSU5fBBc9.ttf) format('truetype');
+}
+@font-face {
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
+}
+@font-face {
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfBBc9.ttf) format('truetype');
+}
+@font-face {
+font-family: 'Bebas Neue';
+src: url(https://templates-preview.com/gitex/fonts/BebasNeue-Light.otf);
+font-weight: bold;
+}
+@font-face {
+font-family: 'SF Pro Regular';
+src: url(https://templates-preview.com/gitex/fonts/SF-Pro-Display-Regular.otf);
+font-weight: 300;
+}
+.font-roboto-condensed {
+font-family: 'Roboto Condensed', 'sans-serif';
+font-weight: 500;
+font-style: normal;
+}
+.font-roboto {
+font-family: 'Roboto', 'sans-serif';
+font-weight: 500;
+font-style: normal;
+}
+.font-helvetica {
+font-family: 'Helvetica Neue';
+}
+/**==============================Fonts End======================================**/
+/**============================Colors Start=====================================**/
+/**==============================Colors End======================================**/
+/**============================General Selectors (Applied to all)================**/
+:root{
+    --smart-color-transparent:#00bf633d;
+    --smart-color:#00BF63;
+    --smart-outline:#0fb967;
+    --smart-input-border-bottom:#00BF63;
+    --smart-outline:#0fb967;
+    --smart-link:#24573e;
+    --smart-btn:#00BF63;
+    --smart-btn-hover:#24573e;
+    --smart-select-opction:#0000001f;
+}
+
+a,h1,h2,h3,h4,h5,h6{
+    color: var(--smart-btn-hover);
+    text-decoration: none;
+}
+
+a:hover{
+    color: var(--smart-btn);
+}
+
+.text-smart{
+    color: var(--smart-color);
+}
+
+.alerta-prof{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: #00000021;
+    z-index: 1;
+    bottom: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+}
+
+.alerta-prof.proccessing, .alerta-prof.message{
+    display: flex;
+}
+
+.alerta-profiss-content{
+    margin: 1rem;
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.alerta-profiss-proccessing, .alerta-profiss-message{
+    display: none;
+}
+.alerta-prof.proccessing .alerta-profiss-proccessing, .alerta-prof.message .alerta-profiss-message{
+    display: block;
+}
+
+
+
+.alerta-profiss-message{
+    width: 100%;
+    box-shadow: 0 0 10px black;
+    background: white;
+    border-radius: 5px;
+}
+
+.loading-overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 9999;
+    background: var(--smart-color);
+}
+.loading-overlay .fa-spin {
+    font-size: 36px;    
+}
+::-webkit-scrollbar {
+    background: transparent;
+    height: 0;
+    width: 0;
+}
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto Condensed', 'sans-serif';
+    font-weight: 500;
+    font-style: normal;
+    overflow: hidden;
+}
+
+/* Index */
+
+.hidden {
+    display: none!important;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.smart-smart-location-action:hover{
+    color: var(--smart-color);
+}
+
+.map-input-container {
+    background-color: #FFFFFF;
+display: flex;
+}
+.map-input-container .map-input-icon {
+color: #4A4F64;
+background-color: #FFFFFF;
+margin: 0 15px;
+line-height: 50px;
+}
+.map-input-container input {
+flex: 1;
+background-color: #FFFFFF;
+}
+.map-input-container input:focus {
+border: none;
+}
+
+
+.main{
+    height: 100%;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+    
+/* Navbar */
+.header{
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    background-color: #FFFFFF;
+    justify-content: space-between;
+    align-items: start;
+    height: 48px;
+    display: flex;
+    z-index: 10;
+}
+
+.header-icons-container-with-other {
+    height: auto;
+}
+
+
+.header-icon-logo-margin {
+    margin-top: 32px;
+}
+.header-icon-logo-margin .profile-picture-container {
+    position: relative;
+}
+.header-icon-logo-margin .profile-picture-container span {
+position: absolute;
+bottom: 0;
+margin-right: 8px;
+padding: 8px;
+border-radius: 50%;
+margin-left: -24px;
+background-color: #9B9B9B;
+color: #FFFFFF;
+font-size: 13px;
+}
+.header-icon-logo-margin .profile-picture-container .paypal-icon {
+height: 56px;
+}
+.header-icon-logo-margin-extra {
+margin-top: 80px;
+}
+.header-icon-logo-margin-bottom {
+margin-bottom: 32px;
+}
+
+/* Fim */
+
+/* Maps*/
+#map {
+    background-color: var(--smart-color-transparent) !important;
+    height: 75%;
+    position: fixed;
+    flex: 1;
+    width: 100%;
+    margin-top: 3rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    z-index: 0;
+}
+
+.autocomplete-suggestions {
+    border-radius: 5px;
+    background-color: #ffffff;
+    max-height: 150px;
+    overflow-y: auto;
+    position: absolute;
+    box-shadow: 0 0 10px rgb(19, 18, 18);
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    transition: max-height 1s ease-out;
+    touch-action: cross-slide-y;
+}
+.autocomplete-suggestion {
+    padding: 5px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    margin: 0.5rem;
+    border-radius: 5px;
+    font-size: 14px !important;
+}
+
+.autocomplete-suggestion::before {
+    content: "\f3c5"; /* Código Unicode do ícone Font Awesome */
+    font-family: "Font Awesome 5 Free"; /* Fonte Font Awesome */
+    font-weight: 900; /* Necessário para ícones sólidos */
+    display: inline-block;
+    margin-right: 8px; /* Espaço entre o ícone e o texto */
+    font-size: 12px; /* Ajuste o tamanho do ícone conforme necessário */
+}
+
+
+.autocomplete-suggestion:hover {
+    background-color: var(--smart-color);
+    color: white;
+}
+/* the end Maps */
+
+/* Location */
+.smart-location{
+    position: absolute;
+    background: white;
+    width: 100vw;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    max-height: 60%;
+    bottom: 0;
+    z-index: 1;
+    overflow: hidden;
+    transform: translateY(0);
+    transition: transform 0.5s ease-in-out;
+    display: block;
+    
+}
+
+.visible{
+    visibility: visible;
+}
+
+.smart-location.closed{
+    transform:  translateY(100%);
+    display: none;
+}
+.smart-location .smart-location-form{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    bottom: 0;
+}
+
+.smart-location .smart-location-form .filtros{
+    height: 10rem;
+    overflow: auto;
+    touch-action: cross-slide-y;
+}
+
+.smart-input-group{
+    border: 0;
+    border-bottom: 1px solid var(--smart-outline);
+    border-radius: 0;
+    offset: 0;
+    box-shadow: none;
+    outline: none; /* Remove o contorno padrão ao focar */
+    margin-bottom: 0.5rem;
+}
+
+.smart-input-group-text{
+    border: 0;
+    background: transparent;
+    padding: 0 1px;
+}
+
+.smart-form-control{
+    border: 0;
+    border-radius: 0;
+    offset: 0;
+    box-shadow: none;
+    outline: none; /* Remove o contorno padrão ao focar */
+    padding: auto 0;
+    color: var(--smart-color) !important;
+}
+
+.smart-form-control:focus{
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    outline: none; /* Remove o contorno padrão ao focar */
+}
+
+.text-smart-90{
+    color: var(--smart-btn-hover);
+}
+
+.filtros .lista-items{
+    max-height: 5rem;
+    overflow-y: hidden;
+    overflow-x: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    touch-action: cross-slide-x;
+}
+
+.filtros .lista-items .lista-item{
+    height: 100%;
+    display: flex;
+    padding: 0.08rem 0.08rem;
+    flex-wrap: nowrap;
+    border-radius: 5px;
+    border: 1px solid var(--smart-btn-hover);
+}
+
+.filtros .lista-items .lista-item.active{
+    background: var(--smart-btn);
+    color: white !important;
+}
+
+.filtros .lista-items .lista-item .lista-item-label{
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 0.1rem;
+    text-align: center;
+}
+
+.filtros .lista-items .lista-item .lista-item-label img{
+    height: 30px;
+    display: flex;
+}
+
+.filtros .lista-items .lista-item .lista-item-label .lista-item-titulo{
+    color: var(--smart-btn-hover);
+    font-size: 14px;
+}
+
+.filtros .lista-items .lista-item.active .lista-item-label .lista-item-titulo{
+    color: white !important;
+}
+
+.bg-smart{
+    background-color: var(--smart-btn-hover);
+    color: white;
+}
+
+.bg-smart:hover{
+    background-color: var(--smart-btn);
+    color: white;
+}
+
+
+/* Request */
+
+.smart-request-rentcar{
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    background: white;
+    width: 100vw;
+    padding: 0.5rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    max-height: 50%;
+    transform: translateY(0);
+    transition: transform 0.5s ease-in-out;
+    display: block;
+}
+
+.smart-request-rentcar.closed{
+    transform: translateY(100%);
+    display: none;
+}
+.smart-request-rentcar .smart-request-content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 15rem;
+    max-height: 100%;
+}
+
+.smart-request-content .smart-request-header{
+    display: flex;
+    justify-content: space-between !important;
+    align-items: center;
+    z-index: 1;
+    background: white;
+    width: 100%;
+}
+
+.smart-request-content .smart-request-items{
+    display: flex;
+    height: 15rem;
+}
+
+.smart-request-content .smart-request-item{
+    display: flex;
+    height: 100%;
+    flex-wrap: nowrap;
+    overflow: auto;
+    touch-action: cross-slide-x;
+    gap: 0.8rem;
+    padding: 0.1rem;
+}
+
+/* Cars */
+.smart-request-item .rentcar{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+}
+
+.smart-request-item .rentcar .rentcar-item{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 2px black;
+    padding: 0.45rem;
+    gap: 3;
+    margin: auto;
+    border-radius: 5px;
+    overflow: auto;
+}
+
+.smart-request-item .rentcar .rentcar-item .rentcar-header{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+    height: 100px;
+    width: 100%;
+    object-fit: contain;
+
+}
+
+.rentcar-icons{
+    display:flex;
+    justify-content: space-between;
+    color: var(--smart-btn-hover);
+}
+
+.rentcar-icons div{
+    text-align: center;
+}
+
+.text-smart-primary{
+    color: var(--smart-link);
+}
+
+.bg-smart-primary{
+    background: var(--smart-link);
+    color: white;
+}
+
+.rentcar .rentcar-item .rentcar-header .rentcar-img{
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    object-fit: cover;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.rentcar .rentcar-item .rentcar-header .rentcar-marca{
+    position: absolute;
+    z-index: 1;
+    font-size: 12px !important;
+    left: 0.5rem;
+    bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.rentcar .rentcar-item .rentcar-header .rentcar-preco{
+    position: absolute;
+    z-index: 1;
+    font-size: 16px !important;
+    left: 0.5rem;
+    top: 0.5rem;
+    text-transform: uppercase;
+}
+
+
+/* Detalhes */
+.rentcar-main-car{
+    height: 96%;
+    width: 100%;
+    left: 0;
+    padding: 1rem;
+    overflow: auto;
+    touch-action: cross-slide-y;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+}
+
+.rentcar-main-car .reserva{
+    height: auto;
+    width: 100%;
+    display: none;
+    justify-content: start;
+    /* flex-direction: column; */
+    align-items: end;
+    position: fixed;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0);
+    bottom: 0;
+    left: 0;
+    transform: translateY(100%);
+    transition: transform 0.5s ease-in, background 0.1s ease-in;
+    
+}
+
+.prop-img{
+    height: 30px;
+    width: 30px;
+    box-sizing: border-box;
+}
+
+.z-index-1{
+    z-index: 1;
+}
+
+.prop-img img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+
+.reserva-body{
+    background: white;
+    box-shadow: 0 0 6px rgb(49, 47, 47);
+    width: 100%;
+    height: 63%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 1rem;
+    overflow: auto;
+    touch-action: cross-slide-y;
+}
+
+.reserva-form{
+    height: 100%;
+    width: 100%;
+}
+
+.rentcar-main-car .reserva.open{
+    transform: translateY(0);
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.3s ease-out;
+    display: flex;
+}
+
+.reserva-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* Menu */
+.menu{
+    z-index: 1100;
+    position: fixed;
+    height: 100%;
+    width: 100vw;
+    background: #0000003f;
+    overflow: hidden;
+    transform: translateX(-100%);
+    left: 0;
+    transition: transform 0.5s ease-in-out;
+    bottom: 0;
+}
+
+.menu.open{
+    transform: translateX(0);
+}
+
+.menu .menu-content{
+    width: 95%;
+    background: white;
+    height: 100%;
+}
+
+.menu .menu-content .menu-header{
+    height: 10rem;
+    padding: 1rem;
+    color: white;
+    background: var(--smart-btn);
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    position: relative;
+}
+
+.menu .menu-content .menu-header .menu-profile{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    color: white !important;
+    font-size: 14px;
+    height: 100%;
+    width: 100%;
+}
+
+.menu .menu-content .menu-header .menu-profile .menu-profile-img{
+    height: 80px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 80px;
+    border-radius: 50%;
+}
+
+.menu .menu-content .menu-header .menu-profile .menu-profile-img img{
+    height: 100%;
+    width: 100%;
+}
+
+.menu-profile-contacto{
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    color: white !important;
+    margin-top: 0.8rem;
+}
+
+.menu .menu-content .menu-header .menu-closed{
+    position: absolute;
+    top: 0;
+    margin: 1rem;
+    right: 0;
+    padding: 0.5rem;
+}
+
+.menu-body{
+    height: 100%;
+    width: 100%;
+    background: #e7e2e2d7;
+    overflow: auto;
+    touch-action: cross-slide-y;
+    padding: 1rem;
+}
+
+.menu-body .menu-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+.menu-body .menu-list .menu-list-item{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    width: 100%;
+    background: var(--smart-btn-hover);
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.menu-body .menu-list .menu-list-item:hover{
+    background: var(--smart-btn);
+}
+
+.menu-body .menu-list .menu-list-item a{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    width: 100%;
+}
+
+.menu-body .menu-list .menu-sublist{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: var(--smart-btn-hover);
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+
+.menu-body .menu-list .menu-sublist:hover{
+    background: var(--smart-btn);
+}
+
+.menu-body .menu-list .menu-sublist a{
+    color: white;
+}
+
+
+.menu-body .menu-list .menu-sublist span{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    transform: rotate(0);
+    transition: transform 0.1s ease-in-out;
+    font-size: 14px;
+}
+
+.menu-body .menu-list .menu-sublist.open span{
+    transform: rotate(180deg);
+}
+
+.menu-body .menu-list .menu-sublist .menu-list{
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out,height 0.5s ease-in-out;
+    padding: 0 1.5rem;
+    height: 0;
+}
+
+.menu-body .menu-list .menu-sublist.open .menu-list{
+    display: block;
+    height: auto;
+    opacity: 1;
+}
+
+/* Fim Menu */
+
+/* Historico */
+.historico{
+    z-index: 1100;
+    position: fixed;
+    height: 100%;
+    width: 100vw;
+    background: #0000003f;
+    overflow: hidden;
+    transform: translateY(-100%);
+    right: 0;
+    transition: transform 0.5s ease-in-out;
+    bottom: 0;
+}
+
+#historico{
+    cursor: pointer;
+}
+
+.historico.open{
+    transform: translateY(0);
+}
+
+.historico .historico-content{
+    width: 100%;
+    background: white;
+    height: 100%;
+}
+
+.historico .historico-content .historico-header{
+    height: 3rem;
+    padding: 1rem;
+    color: white;
+    background: var(--smart-btn);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.historico .historico-content .historico-body{
+    margin: 0 1rem;
+    max-height: 94%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    touch-action: cross-slide-y;
+    padding-bottom: 1rem;
+}
+
+.historico .historico-content .historico-body .historico-list{
+    margin: 0.1rem;
+    margin-top: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 0 3px rgb(0, 0, 0);
+    border-radius: 5px;
+}
+
+.historico-list-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.historico-list-header .historico-date{
+    position: relative;
+}
+
+.historico-list-header .historico-date::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 0.2rem;
+    background:  var(--smart-btn-hover);
+}
+
+.historicos{
+    top: 0.5rem;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.historicos .historico-content{
+    padding: 3rem 1rem;
+    height: 100%;
+    overflow: auto;
+    touch-action: cross-slide-y;
+}
+
+
+.history{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+
+.histtory-propreitario{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.perfil{
+    height: 50px;
+    width: auto;
+    align-items: center;
+    gap: 1rem;
+    display: flex;
+    flex-wrap: nowrap;
+    border-radius: 5px;
+}
+
+.perfil .img-perfil{
+    height: 50px;
+    width: 50px;
+}
+
+.perfil div img{
+    height: 50px;
+    border-radius: 5px;
+}
+
+.history-car{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.history-car .car-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.history-car .car-img img{
+    height: 70px;
+    border-radius: 5px;
+}
+
+.contacto{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contacto a{
+    background: var(--smart-btn-hover);
+    color: #ffffff;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.contacto a:hover{
+    background: var(--smart-btn);
+}
+
+/* Minha conta */
+.settings{
+    position: relative;
+    flex: 1;
+    overflow: auto;
+    touch-action: cross-slide-y;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 99%;
+    background: #00000000;
+    margin-top: 2.9rem;
+}
+
+.settings .settings-info{
+    height: 100%;
+    width: 100%;
+}
+
+.profile-info-pic{
+    height: 10rem;
+    background: var(--smart-btn);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.profile-info-img{
+    position: relative;
+    display: flex;
+    color: white;
+    background: var(--smart-btn-hover);
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-info-img .profile-edit-info{
+    position: absolute;
+    right: 1px;
+    top: 50%;
+    color: rgb(184, 207, 240);
+    z-index: 1;
+    cursor: pointer;
+    /* background: #4A4F64; */
+    padding: 0.3rem;
+    border-radius: 50%;
+}
+
+
+
+
+/* Profissional */
+.rentcar-profiss{
+    position: relative;
+    height: auto;
+    width: 100%;
+    background: white;
+    color: var(--smart-btn);
+    display: flex;
+    align-items: center;
+    font-size: 20px !important;
+}
+
+.rentcar-profiss a{
+    position: relative;
+    color: var(--smart-btn-hover);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 20px !important;
+    border-radius: 50%;
+}
+
+.rentcar-profiss a.active{
+    color: var(--smart-btn);
+}
+
+.rentcar-profiss a:hover{
+    color: var(--smart-btn);
+}
+
+.rentcar-profiss a.active:hover{
+    color: var(--smart-btn-hover);
+}
+
+.rentcar-profiss a::before{
+    content: '';
+    height: 0.5rem;
+    width: 100%;
+    position: absolute;
+    bottom: -1rem;
+    background: var(--smart-btn-hover);
+}
+
+.rentcar-profiss a.active::before{
+    content: '';
+    height: 0.5rem;
+    width: 100%;
+    position: absolute;
+    bottom: -1rem;
+    background: var(--smart-btn);
+}
+
+.rentcar-profiss a .pendente{
+    position: absolute;
+    right: 0.2rem;
+    top: -1.2rem;
+    display: flex;
+    padding: 0.5rem;
+    border-radius: 50%;
+    color: var(--smart-btn);
+}
+
+.rentcar-profiss-title{
+    padding: 1rem 0rem 0rem 1rem;
+}
+
+.rentcar-profiss .profiss-content{
+    padding: 0.1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px !important;
+    width: 100%;
+}
+
+.profiss-content .profiss-card{
+    background: #0000001c;
+    padding: 0.5rem;
+    box-shadow: 0 0 10px white;
+    border-radius: 5px;
+    width: 100%;
+}
+
+
+.profiss-reserva{
+    display: flex;
+    background: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+    flex-direction: column;
+}
+
+.profiss-reserva-header{
+    display: flex;
+    justify-content: space-between;
+    height: 2rem;
+    align-items: center;
+    width: 100%;
+}
+
+.profiss-reserva-profile{
+    display: flex;
+    height: 2rem;
+    width: max-content;
+    align-items: center;
+    gap: 0.5rem;
+    width: max-content;
+}
+
+.profiss-reserva-profile .profiss-reserva-profile-img{
+    width: 2rem;
+    height: 2rem;
+}
+
+.profiss-reserva-profile .profiss-reserva-profile-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+/* Novo Prof */
+
+.rentcar-profissicional{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 5rem;
+    background: white;
+    z-index: 1;
+    width: 100vw;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    padding: 1rem;
+}
+
+.rentcar-profiss-reserva{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: #00000025;
+    z-index: 1;
+    bottom: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 1rem; 
+    top: 3rem;
+    overflow: auto;
+    touch-action: cross-slide-y;
+}
+
+.rentcar-profiss-reserva.open{
+    display: flex;
+}
+
+.rentcar-profiss-reserva .reserva-pendente{
+    width: 100%;
+    /* display: flex; */
+    flex-wrap: nowrap;
+    transform: scale(0);
+    transition: transform 3s ease-in-out;
+    display: none;
+}
+
+.rentcar-profiss-reserva.open .reserva-pendente{
+    display: block;
+    transform: scale(1);
+}
+
+
+.rentcar-profiss-cancelar{
+    position: fixed;
+    height: 60%;
+    width: 100%;
+    background: white;
+    z-index: 1;
+    bottom: 0;
+    display: none;
+    align-items: start;
+    justify-content: start;
+    padding: 1.5rem 1rem; 
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    box-shadow: 0 0 10px black;
+    flex-direction: column;
+    transform: translateY(100%);
+    transition: transform 1s ease-in-out;
+}
+
+.rentcar-profiss-cancelar.open{
+    transform: translateY(0);
+    display: flex;
+}
+
+.rentcar-profiss-cancelar .cancelar-form{
+    width: 100%;
+}
+
+.alerta{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.151);
+    z-index: 1;
+    bottom: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 1rem; 
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    box-shadow: 0 0 10px black;
+    flex-direction: column;
+    transform: translateY(100%);
+    transition: transform 1s ease-in-out;
+    color: var(--smart-btn);
+}
+
+.alerta.open{
+    transform: translateY(0);
+    display: flex;
+}
+
+.alerta .alerta-erro,.alerta-success{
+    display: none;
+}
+
+.alerta.open .alerta-erro,.alerta-success{
+    display: block;
+}
+
+
+.rentcar-reserva-aceite{
+    position: fixed;
+    height: 30%;
+    width: 100%;
+    background: rgba(255, 255, 255, 255);
+    z-index: 1;
+    bottom: 0;
+    display: none;
+    flex-direction: column;
+    padding: 1.5rem 1rem; 
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    box-shadow: 0 0 10px black;
+    flex-direction: column;
+    transform: translateY(100%);
+    transition: transform 1s ease-in-out;
+    color: var(--smart-btn);
+}
+
+.rentcar-reserva-aceite.open{
+    transform: translateY(0);
+    display: flex;
+}
+
+.rentcar-reserva-confirm{
+    display: block;
+    gap: 2px;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    justify-self: center;
+    position: relative;
+}
+
+.confirmar-reserva{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.confirmar-img{
+    height: 2.1rem;
+    width: 4rem;
+}
+
+.confirmar-img-cliente{
+    display: flex;
+    align-items: center;
+    flex: 1rem;
+}
+
+.confirmar-img-cliente img{
+    height: 2.1rem;
+    width: 2.1rem;
+    border-radius: 50%;
+    
+}
+
+.confirmar-img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Fim Proff */
+
+/* Veiculos */
+.veiculos{
+    /* flex: 1; */
+    color: #000;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top: 0;
+    z-index: 0;
+    height: 100%;
+    overflow: hidden;
+    left: 0;
+    width: 100vw;
+    padding: 2.5rem 0;
+    transform: scale(0);
+    transition: transform 1s ease-in;
+}
+
+.veiculos.open{
+    display: flex;
+    transform: scale(1);
+}
+
+.veiculos .filtro{
+    position: relative;
+    padding: 1.5rem 1rem 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.tipo_filtro{
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    padding: 0 1rem;
+    width: 100%;
+    display: none;
+    justify-content: space-between;
+}
+
+.tipo_filtro.open{
+    display: flex;
+}
+
+.veiculos-items{
+    height: 98%;
+    width: 100%;
+    display: flex;
+    padding: 0 1rem;
+}
+
+.veiculos-items .list{
+    overflow: auto;
+    touch-action: cross-slide-y;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.veiculo{
+    height: 5.5rem;
+    width: 100;
+    overflow: hidden;
+    display: flex;
+    justify-content: start;
+    position: relative;
+    gap: 1rem;
+    box-shadow: 0 0 1px var(--smart-btn-hover);
+    padding: 0.5rem;
+    border: 1px solid var(--smart-btn-hover);
+    border-radius: 10px;
+}
+
+.veiculo .veiculo-imagem{
+    height: 100%;
+    width: 45%;
+    z-index: 1;
+}
+
+.veiculo .veiculo-imagem img{
+    object-fit: fill;
+    width: 100%;
+    border-radius: 10px;
+    height: 100%;
+}
+
+.modificar-veiculo{
+    position: fixed;
+    z-index: 1;
+    height: 100%;
+    width: 100vw;
+    transform: scale(0);
+    display: none;
+    transition: transform 0.5s ease-in;
+    padding-top: 3rem;
+}
+
+
+.modificar-veiculo.open{
+    display: block;
+    transform: scale(1);
+}
+
+.modificar-veiculo .modificar-veiculo-mapa{
+    position: absolute;
+    height: 41% !important;
+    width: 100%;
+    top: 0;
+    background: #00000036;
+}
+
+.modificar-veiculo-form{
+    position: absolute;
+    height: 60%;
+    width: 100%;
+    bottom: 0;
+    background: #ffffff;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    box-shadow: 0 0 10px black;
+    padding: 0 1rem; 
+    left: 0;
+    overflow: auto;
+    touch-action: cross-slide-y;
+}
+
+.modificar-veiculo-form .header{
+    position: fixed;
+    z-index: 1000;
+    height: 5rem;
+    left: 0;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    box-shadow: 0 0 1px black;
+    display: flex;
+    align-items: center;
+}
+
+.modificar-veiculo-form .header .img{
+    height: 4rem;
+    width: 6rem;
+}
+
+.modificar-veiculo-form .header .img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.modificar-veiculo-form-item{
+    padding-top: 6rem;
+    height: 10%;
+    width: 100%;
+    padding-bottom: 1rem;
+    position: relative;
+    overflow: hidden;
+    touch-action: cross-slide-y;
+}
